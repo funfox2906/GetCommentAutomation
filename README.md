@@ -1,7 +1,7 @@
 # GetCommentAutomation
 Automation tool to get comment from youtube videos
 
-## Installation From CMD/Terminal
+## Installation From CMD/Terminal with Python3
 
 ```
 $ py -m pip install lxml 
