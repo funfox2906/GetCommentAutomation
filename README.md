@@ -7,6 +7,8 @@ Automation tool to get comment from youtube videos
 $ py -m pip install lxml 
 $ py -m pip install cssselect
 $ py -m pip install requests
+
+OR with pip3 install ...
 ```
 ### To Get YoutubeID
 From URL: https://www.youtube.com/watch?v=OGLFirnHHes&...

@@ -202,6 +202,11 @@ def extract_reply_cids(html):
     sel = CSSSelector('.comment-replies-header > .load-comments')
     return [i.get('data-cid') for i in sel(tree)]
 
+def deleteCidInText(text):
+    index = text.find("cid") - 3
+    text = text[:index] 
+    text +=" }"
+    return text
 
 def main(argv):
     parser = argparse.ArgumentParser(add_help=False, description=('Download Youtube comments without using the Youtube API'))
@@ -250,12 +255,13 @@ def main(argv):
         my_list = list(f)
     numb_list=[]
     for line in my_list:
-        numb_list.append(line[10:13])
+        # numb_list.append(line[10:13])
+        numb_list.append(line)
 
-    numb_list.sort()
+    #numb_list.sort()
     with open(output, 'w') as filehandle:
         for line in numb_list:
-            filehandle.write('%s\n' % line)
+            filehandle.write('%s\n' % deleteCidInText(line))
     print("Check file ",output," for result !!!")
     
     print("----- Copyright by DucLee -----")
